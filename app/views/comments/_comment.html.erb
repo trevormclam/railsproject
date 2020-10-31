@@ -1,13 +1,13 @@
 <p>
-  <strong>Commenter:</strong>
+  <strong>Reviewer:</strong>
   <%= comment.commenter %>
 </p>
 
 <p>
-  <strong>Comment:</strong>
+  <strong>Review:</strong>
   <%= comment.body %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= link_to 'Destroy Review', [comment.article, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
 </p>

@@ -1,0 +1,22 @@
+<h1>Create New Item</h1>
+<%= form_with scope: :item, url: items_path, local: true do |form| %>
+  <p>
+    <%= form.label "link to Image" %><br>
+    <%= form.text_field :image %>
+  </p>
+  <p>
+    <%= form.label "Item Description" %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.label :quantity %><br>
+    <%= form.text_field :quantity %>
+  </p>
+  <p>
+    <%= form.label :cost %><br>
+    <%= form.text_field :cost %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

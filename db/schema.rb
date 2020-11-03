@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_202634) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "quantity"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -33,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_11_03_202634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "image"
+    t.string "description"
+    t.integer "quantity"
+    t.string "cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
   end
 
 end

@@ -1,16 +1,27 @@
 <h1>Items You Searched For</h1>
+
+<style>
+  th, td {
+    padding: 10px;
+  }
+</style>
+
 <table>
   <tr>
+    <th></th>
     <th>Item</th>
     <th>Price</th>
     <th colspan="2"></th>
   </tr>
 
   <% @articles.each do |article| %>
-    <tr>
-      <td><%= link_to article.title, article_path(article) %></td>
-      <td><%= article.text %></td>
-    </tr>
+  <tr>
+    <td><%= image_tag(article.image, class: "img-responsive", alt: "(Image)") %></td>
+    <td><%= link_to article.title, article_path(article) %></td>
+    <td>$<%= article.text %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+  </tr>
   <% end %>
 
 </table>

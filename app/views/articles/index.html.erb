@@ -1,7 +1,11 @@
 <h1>Available Grocery Items</h1>
 
+<style>
+  th, td {
+    padding: 10px;
+  }
+</style>
 
-<%= link_to 'Home', welcome_index_path %>
 <%= link_to 'New Item', new_article_path %>
 <%= link_to 'Cart', cart_index_path %>
 <h1></h1>
@@ -9,15 +13,19 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Item</th>
     <th>Price</th>
+    <th>Quantity</th>
     <th colspan="2"></th>
   </tr>
 
   <% @articles.each do |article| %>
     <tr>
+      <td><%= image_tag(article.image, class: "img-responsive", alt: "(Image)") %></td>
       <td><%= link_to article.title, article_path(article) %></td>
       <td>$<%= article.text %></td>
+      <td><%= article.quantity %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
@@ -26,4 +34,5 @@
 <h1></h1>
 <%= form_tag(search_index_path, method: :get) %>
 <%= text_field_tag(:search) %>
-<%= submit_tag ("Search") %>
+<%= submit_tag ("Search") %><br><br>
+<%= link_to 'Back', welcome_index_path %>

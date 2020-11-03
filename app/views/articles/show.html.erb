@@ -1,12 +1,20 @@
+<h1>View Item</h1>
 <p>
-  <strong>Item:</strong>
+  <strong>Item Name:</strong>
   <%= @article.title %>
 </p>
 
+<%= image_tag(@article.image, class: "img-responsive", alt: "(Image)") %>
+
 <p>
   <strong>Price:</strong>
-  <%= @article.text %>
+  $<%= @article.text %>
 </p>
 
-<%= link_to 'Add To Cart(FIX)', cart_index_path(), method: :get, params: {id: @article} %> | <%= link_to 'Back', articles_path %>
-<%= button_to 'Add To Cart', cart_index_path(), method: :get, params: {id: @article} %>
+<p>
+  <strong>Quantity:</strong>
+  <%= @article.quantity %>
+</p>
+
+<%= button_to 'Add To Cart', cart_index_path(), method: :get, params: {id: @article} %><br>
+<%= link_to 'Back', articles_path %>

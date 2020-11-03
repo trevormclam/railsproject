@@ -8,13 +8,17 @@ class CartsController < ApplicationController
   end
 
   def new
+    @cart = Cart.new
   end
 
   def create
     @cart = Cart.new(cart_params)
 
-    @cart.save
-    redirect_to @cart
+    if @cart.save
+      redirect_to @cart
+    else
+      render 'new'
+    end
   end
 
   private

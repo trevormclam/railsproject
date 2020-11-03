@@ -1,0 +1,17 @@
+<h1>New Item</h1>
+
+<%= form_with scope: :cart, url: articles_path, local: true do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :count %><br>
+    <%= form.text_area :count %>
+  </p>
+
+  <p>
+    <%= form.submit "Add to cart" %>
+  </p>
+<% end %>

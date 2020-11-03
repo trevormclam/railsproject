@@ -1,0 +1,17 @@
+<h1>Cart Contents</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+
+  <% @carts.each do |article| %>
+    <tr>
+      <td><%= cart.name %></td>
+      <td><%= cart.price %></td>
+      <td><%= link_to 'Show', cart_path(cart) %></td>
+    </tr>
+  <% end %>
+</table>

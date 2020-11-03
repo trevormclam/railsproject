@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'search/index'
   get 'welcome/index'
+  get 'cart/index'
 
   resources :articles do
     resources :comments

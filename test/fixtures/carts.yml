@@ -3,7 +3,9 @@
 one:
   name: MyString
   price: MyText
+  count: MyText
 
 two:
   name: MyString
   price: MyText
+  count: MyText

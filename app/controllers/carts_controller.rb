@@ -15,14 +15,21 @@ class CartsController < ApplicationController
     @cart = Cart.new(cart_params)
 
     if @cart.save
-      redirect_to @cart
+      redirect_to carts_path
     else
       render 'new'
     end
   end
 
+  def destroy
+    @cart = Cart.find(params[:id])
+    @cart.destroy
+
+    redirect_to carts_path
+  end
+
   private
     def cart_params
-      params.require(:cart).permit(:name, :price, :count)
+      params.require(:cart).permit(:name, :count)
     end
 end

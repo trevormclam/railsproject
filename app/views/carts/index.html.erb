@@ -8,15 +8,18 @@
     <th></th>
   </tr>
 
-  <% @carts.each do |article| %>
+  <% @carts.each do |cart| %>
     <tr>
       <td><%= cart.name %></td>
       <td><%= cart.price %></td>
-      <td><%= cart.count %></td>
+<!-- cannot display count -->
+      <td></td>
       <td><%= link_to 'Show', cart_path(cart) %></td>
+      <td><%= link_to 'Destroy', cart_path(cart),
+        method: :delete %></td>
     </tr>
   <% end %>
 
   <%= link_to 'Back', articles_path %>
-  
+
 </table>

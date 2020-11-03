@@ -13,6 +13,8 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
+<!-- needs way to add item to a cart -->
+      <td><%= link_to 'Add to cart', new_cart_path(article) %></td>
       <td><%= link_to 'Show', article_path(article) %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
       <td><%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
@@ -20,5 +22,5 @@
   <% end %>
 
   <%= link_to 'View Cart', carts_path %>
-  
+
 </table>

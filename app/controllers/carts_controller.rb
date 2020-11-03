@@ -19,6 +19,6 @@ class CartsController < ApplicationController
 
   private
     def cart_params
-      params.require(:cart).permit(:name, :price)
+      params.require(:cart).permit(:name, :price, :count)
     end
 end

@@ -14,15 +14,25 @@
   <% end %>
 
   <p>
-    <%= form.label 'Name' %><br>
+    <%= form.label 'Name:' %><br>
     <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label 'Price' %><br>
+    <%= form.label 'Image URL:' %><br>
+    <%= form.text_field :image %>
+  </p>
+
+  <p>
+    <%= form.label 'Price:' %><br>
     <%= form.text_field :text %>
   </p>
 
+  <p>
+    <%= form.label 'In Stock (quantity):' %><br>
+    <%= form.text_field :quantity %>
+  </p>
+    
   <p>
     <%= form.submit %>
   </p>

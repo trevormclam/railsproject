@@ -1,11 +1,19 @@
+<h1>View Item</h1>
 <p>
-  <strong>Item:</strong>
+  <strong>Item Name:</strong>
   <%= @article.title %>
 </p>
 
+<%= image_tag(@article.image, class: "img-responsive", alt: "(Image)") %>
+
 <p>
   <strong>Price:</strong>
-  <%= @article.text %>
+  $<%= @article.text %>
 </p>
 
-<%= link_to 'Add To Cart(FIX)', articles_path() %> | <%= link_to 'Back', articles_path %>
+<p>
+  <strong>Quantity:</strong>
+  <%= @article.quantity %>
+</p>
+
+<%= link_to 'Add Item to Cart (FIXME)', articles_path() %> | <%= link_to 'Back', articles_path %>

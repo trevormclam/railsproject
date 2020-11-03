@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   get 'search/index'
   get 'welcome/index'
-  get 'cart/index'
-  get '/add' => 'cart#add'
-  post 'cart/index'
-
+  get '/admin/index'
+  get '/cart/index'
   resources :articles do
     resources :comments
   end

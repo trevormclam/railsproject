@@ -1,3 +1,14 @@
 <h1>Hello, Shopper!</h1>
-<%= link_to 'Products', controller: 'articles' %>
-<%= link_to 'Add New Product', new_article_path %>
+
+
+<div class= "search-container">
+
+  <%= form_tag(search_index_path, method: :get) %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag ("Search") %>
+
+<div>
+
+<div class = "adminLink-container">
+  <%= link_to 'Admin', admin_index_path %>
+</div>

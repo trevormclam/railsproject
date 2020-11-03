@@ -1,1 +1,18 @@
 <h1>Shopping Cart</h1>
+
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @cart.each do |item| %>
+    <tr>
+      <td><%= link_to item.item, article_path(item) %></td>
+      <td>$<%= item.price %></td>
+    </tr>
+  <% end %>
+</table>
+<h1></h1>

@@ -3,7 +3,6 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: { minimum: 3}
 
   def self.search(search)
-    puts "test123 >>>>>>>>>>>>>>>>>>>>>>"
     if search
       article = Article.find_by(title: search)
       if article

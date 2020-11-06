@@ -1,0 +1,8 @@
+<ul class="nav navbar-nav">
+  <li class="active"><a <%= link_to 'Home', controller: 'welcome' %></li>
+  <li class="active"><a <%= link_to 'Catalog', controller: 'articles' %></li>
+  <li class="active"><a <%= link_to 'Cart', controller: 'cart' %></li>
+  <li class="active"><a href="#">About</a></li>
+
+  <li style="float:right" class="active"><a <%= link_to 'Admin', new_article_path %></a></li>
+</ul>

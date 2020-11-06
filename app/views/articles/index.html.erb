@@ -7,7 +7,7 @@
 </style>
 
 <%= link_to 'New Item', new_article_path %>
-<%= link_to 'Cart', cart_index_path %>
+<%= link_to 'Cart', controller: 'carts' %><br>
 <h1></h1>
 
 
@@ -27,7 +27,7 @@
       <td>$<%= article.text %></td>
       <td><%= article.quantity %></td>
       <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Destroy', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% end %>
 </table>

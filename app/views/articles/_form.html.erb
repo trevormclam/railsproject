@@ -15,26 +15,26 @@
 
   <p>
     <%= form.label 'Name:' %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, maxLength: 20 %>
   </p>
 
   <p>
     <%= form.label 'Image URL:' %><br>
-    <%= form.text_field :image %>
+    <%= form.text_field :image, maxLength: 100 %>
   </p>
 
   <p>
-    <%= form.label 'Price:' %><br>
-    <%= form.text_field :text %>
+    <%= form.label 'Price per item:' %><br>
+    <%= form.number_field :text, min: 0.01, max: 999999, size: 10, maxLength: 10, step: 0.01 %>
   </p>
 
   <p>
     <%= form.label 'In Stock (quantity):' %><br>
-    <%= form.text_field :quantity %>
+    <%= form.number_field :quantity, min: 1, max: 999999, size: 8, maxLength: 6, step: 1 %>
   </p>
-    
-  <p>
-    <%= form.submit %>
+
+  <p><br>
+    <%= form.submit "Submit"%>
   </p>
 
 <% end %>

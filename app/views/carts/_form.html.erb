@@ -1,0 +1,35 @@
+<%= form_with model: @cart, local: true do |form| %>
+
+  <% if @cart.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@cart.errors.count, "error") %> prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @cart.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>Item: </strong><%= @cart.item %><br><br>
+    <strong>Price: </strong>$<%= @cart.price %><br><br>
+    <strong>In Stock: </strong><%= @article.quantity %><br><br>
+    <%= form.hidden_field :image %>
+    <%= form.hidden_field :item %>
+    <%= form.hidden_field :price %>
+    <%= form.hidden_field :articleid %>
+  </p>
+
+  <p>
+    <%= form.label 'Quantity:' %><br>
+    <%= form.number_field :quantity, min: 1, max: @article.quantity, size: 8, maxLength: 6, step: 1 %>
+  </p>
+
+  <p><br>
+    <%= form.submit "Add to Cart"%>
+  </p>
+
+<% end %>

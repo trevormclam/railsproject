@@ -6,11 +6,6 @@
   }
 </style>
 
-<%= link_to 'New Item', new_article_path %>
-<%= link_to 'Cart', controller: 'carts' %><br>
-<h1></h1>
-
-
 <table>
   <tr>
     <th></th>
@@ -35,4 +30,3 @@
 <%= form_tag(search_index_path, method: :get) %>
 <%= text_field_tag(:search) %>
 <%= submit_tag ("Search") %><br><br>
-<%= link_to 'Back', welcome_index_path %>

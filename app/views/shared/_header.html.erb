@@ -1,8 +1,19 @@
-<ul class="nav navbar-nav">
-  <li class="active"><a <%= link_to 'Home', controller: 'welcome' %></li>
-  <li class="active"><a <%= link_to 'Catalog', controller: 'articles' %></li>
-  <li class="active"><a <%= link_to 'Cart', controller: 'carts' %></li>
-  <li class="active"><a href="#">About</a></li>
+<body>
+  <div class="box">
+    <div class="row header">
+      <ul class="nav navbar-nav">
+        <li class="active"><a <%= link_to 'Home', controller: 'welcome' %></li>
+        <li class="active"><a <%= link_to 'Catalog', controller: 'articles' %></li>
+        <li class="active"><a <%= link_to 'Cart', controller: 'carts' %></li>
+        <li class="active"><a href="#">About</a></li>
 
-  <li style="float:right" class="active"><a <%= link_to 'Admin', new_article_path %></a></li>
-</ul>
+        <li style="float:right" class="active"><a <%= link_to 'New Item', new_article_path %></a></li>
+      </ul>
+    </div>
+    <div class="row content">
+      <%= yield %>
+    </div>
+    <div class="row footer">
+    </div>
+  </div>
+</body>
